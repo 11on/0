@@ -87,21 +87,7 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 		<div id="preroll" style="width:100%;height:100%" class="buzzplayer-stage" data-hash="Pj83_mHbvbvkn-I-xay1MfeA83PlRhaTcLM4ULIRDKU"></div>
 
 		<script>
-		
-		if (!$_GET('id')) document.write('Привет мир...')
-		else 
-		{
-			/*
-			if (document.referrer) 
-				{
-					var player = new Playerjs({id:"preroll", "url":document.referrer, file:"https://fd.0rx.ru/"+$_GET('id')+".m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
-				}
-				else 
-				*/					
-//					var player = new Playerjs({id:"preroll", file:"https://fd.0rx.ru/"+$_GET('id')+".m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
-					var player = new Playerjs({id:"preroll", file:$_GET('id')+".m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
-		}
-	
+			var player = new Playerjs({id:"preroll", file:$_GET('id')+".m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
 		</script>
 
 <script data-cfasync='false'>
@@ -120,7 +106,7 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 		var dopAdv=false;
 			if (document.referrer) 
 			{
-				if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.me') && !ref.includes('on.es')) dopAdv=true;
+				if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.me') && !ref.includes('on.es') && !ref.includes('ke.ru')) dopAdv=true;
 			} else dopAdv=true;
 
 			if (dopAdv)
