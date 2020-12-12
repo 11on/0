@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<head><!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2057223-42"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2057223-42');
+</script>
 		<script>
-//			if((self.parent&&!(self.parent===self))&&(self.parent.frames.length!=0)){self.parent.location=document.location;stopIframe();window.stop();}
+//			if((self.parent&&!(self.parent===self))&&(self.parent.frames.length!=0)){self.parent.location=document.location}
 		</script>
 
+		<meta http-equiv="Cache-Control" content="no-cache">
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=auto,minimal-ui">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="theme-color" content="#35363a"/>
+		<meta name="viewport" content="width=device-width">
 		<script>
-		document.write('<title>'+document.referrer+'</title>');
+		if (document.referrer) 
+		{
+			url = document.referrer; 
+			ref = url.match(/:\/\/(.[^/]+)/)[1];
+			document.write('<title>'+url+'</title>');
+		} else document.write('<title>no url</title>');
 		</script>
+		<script src="player.js?ver=4" type="text/javascript"></script>
 		<style>
 			::-webkit-scrollbar { width: 0;}
-			html, body {width:100%; height:100%; margin:0; padding:0; border: none;}
-			#promo {width:100%;height:27%;max-height:27%;margin:0; padding:0; border: none;}
-			#player {background: #000 url(i/loading.gif) no-repeat center; width:100%; height:100%; margin:0; padding:0; border: none;}
+			html, body, #player{width:100%; height:100%; margin:0; padding:0}
+			#player {background: #000 url(loading.gif) no-repeat center; max-height:100%}
 			#player {overflow: scroll} 
+			
+			div.newWin {display: table;height:100%; width:100%; float:left;background:black}
+			div.newLink {display:table-cell;vertical-align: middle;text-align:center;}
+			div.newLink a {color:white; font-size: 160%;text-decoration:none; border-bottom:dotted 1px white}
+			div.newLink a:hover {color:green;border-bottom:dotted 1px green}
+			tg {display:inline-block;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}
 		</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2057223-42"></script>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+			function $_GET(key) 
+			{
+				var p = window.location.search;
+				p = p.match(new RegExp(key + '=([^&=]+)'));
+				return p ? p[1] : false;
+			}
 
-		  gtag('config', 'UA-2057223-42');
+			if (!$_GET('autoplay')) $autoPlay=0
+			else $autoPlay=$_GET('autoplay');
+			
+			jQuery(document).ready(function($)
+			{
+				$( window ).resize(function() {
+					resize_info();
+				});
+			});
+
+			function resize_info()
+			{
+				(function($) {
+					window.scroll(0,document.documentElement.offsetHeight);
+				})(jQuery);
+			}
+			setTimeout('window.scroll(0,document.documentElement.offsetHeight)', 15001);
+			setTimeout('window.scroll(0,document.documentElement.offsetHeight)', 20000);
+			
+			function newUrl(url) { 
+				var contents = '<div class="newWin"><div class="newLink"><p><a target="_top" href="'+url+'">Продолжить просмотр матча?</a></p><p><a href="tg://resolve?domain=cnline"><tg>&#x27A4</tg>@cnline</a></p></div></center>';
+				document.getElementById('preroll').innerHTML=contents; player.api("stop"); setTimeout(function() {top.location.href = url;}, 3000);
+			}
+
 		</script>
-		
 	</head>
 	<body><!--LiveInternet counter--><div style="display:none"><script type="text/javascript">
-document.write('<a href="//www.liveinternet.ru/click;sport-on" '+
-'target="_blank"><img src="//counter.yadro.ru/hit;sport-on?t26.1;r'+
-escape(document.referrer)+((typeof(screen)=='undefined')?'':
-';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
-screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
-';h'+escape(document.title.substring(0,150))+';'+Math.random()+
-'" alt="" title="LiveInternet: показано число посетителей за'+
-' сегодня" '+
-'border="0" width="88" height="15"><\/a>')
+document.write("<a href='//www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t44.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,150))+";"+Math.random()+
+"' alt='' title='LiveInternet' "+
+"border='0' width='31' height='31'><\/a>")
 </script></div><!--/LiveInternet-->
+		<script>if (document.referrer) if (ref.includes('liveball')) {document.write(contents);window.stop();}</script>
 
-<div id="preroll" style="width:100%;height:100%">
-<!--		
-		<iframe id="player" name="player" width="100%" height="100%" src="https://matchtv.ru/on-air" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> 
--->
-	
-		<iframe id="player" name="player" width="100%" height="100%" src="https://46-166-142-27.livesports24.online/setantaukraine.m3u8" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
-</div>
-		
+		<div id="preroll" style="width:100%;height:100%"></div>
+
+		<script>
+			var player = new Playerjs({id:"preroll", "url":"", file:"https://46-166-142-27.livesports24.online/setantaukraine.m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
+//			var player = new Playerjs({id:"preroll", "url":"https://bit.ly/2IeVQVe", file:"https://tv.0es.online/tv.m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
+		</script>
+
 <script data-cfasync='false'>
     (function(w,d,o,g,r,a,m){
         var cid=(Math.random()*1e17).toString(36);d.write('<div id="'+cid+'"></div>');
@@ -60,18 +101,30 @@ screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
             p.parentNode.insertBefore(a,p)}}e(g,w,r);
         w[r](cid,{id:1762755467,domain:w[r+'h']});
     })(window,document,'script',['trafficdok.com'],'ABNS');
-</script>		
-		<script>
-			/*	
-window.onload = () => {
-    let iframeName = document.getElementById('player');
-    let iframeContent = iframeName.contentDocument;
-    iframeContent.body.innerHTML = iframeContent.body.innerHTML + '<style>div.adfox-block{display: none !important}; header{display: none !important}; div.section__header {display: none !important}; header.header{display: none !important};</style>';
-	
-	iframeContent.header.innerHTML = '';
-	
-	*/
+</script>
+				
+	<script>
+		var dopAdv=false;
+			if (document.referrer) 
+			{
+				if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es') && !ref.includes('ke.ru')) dopAdv=true;
+			} else dopAdv=true;
+
+			if (dopAdv)
+					{
+						var arrId = {
+						  '124': 'https://bit.ly/3laVNb2',
+						  '211': 'https://bit.ly/3laVNb2',
+						  '522': 'https://bit.ly/3laVNb2',
+						  '531': 'https://bit.ly/3laVNb2',
+						  '535': 'https://bit.ly/3laVNb2',
+						  '2177': 'https://bit.ly/3laVNb2',
+						  'live': 'https://bit.ly/3laVNb2',
+						'2live': 'https://bit.ly/3laVNb2',
+						'tv': 'https://bit.ly/3laVNb2',
+						}; 	
+						for (key in arrId) if (key==$_GET('id')) setTimeout('newUrl("'+arrId[key]+'")',330000);
+					}
 		</script>
-	
 	</body>
 </html>
