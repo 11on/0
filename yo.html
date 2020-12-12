@@ -88,16 +88,8 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 
 		<script>
 		
-		if (!$_GET('id')) document.write('Привет мир...')
-		else 
-		{
-			if (document.referrer) 
-				{
-					var player = new Playerjs({id:"preroll", "url":document.referrer, file:"https://www.youtube.com/embed/6iJLV7dQ5qU", ratio:"16/9", autoplay:$autoPlay, "default_quality":"480p"});
-				}
-				else var player = new Playerjs({id:"preroll", file:"https://www.youtube-nocookie.com/embed/sQq155mMTR8?autoplay=1&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0", ratio:"16/9", autoplay:$autoPlay, "default_quality":"480p"});
-		}
-	
+		var player = new Playerjs({id:"preroll", file:"https://www.youtube-nocookie.com/embed/sQq155mMTR8?autoplay=1&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0", ratio:"16/9", autoplay:$autoPlay, "default_quality":"480p"});
+		
 		</script>
 
 <script data-cfasync='false'>
