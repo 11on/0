@@ -10,22 +10,11 @@
 
   gtag('config', 'UA-2057223-42');
 </script>
-		<script>
-//			if((self.parent&&!(self.parent===self))&&(self.parent.frames.length!=0)){self.parent.location=document.location}
-		</script>
 
 		<meta http-equiv="Cache-Control" content="no-cache">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<script>
-		if (document.referrer) 
-		{
-			url = document.referrer; 
-			ref = url.match(/:\/\/(.[^/]+)/)[1];
-			document.write('<title>'+url+'</title>');
-		} else document.write('<title>no url</title>');
-		</script>
-		<script src="player.js?ver=6" type="text/javascript"></script>
+
 		<style>
 			::-webkit-scrollbar { width: 0;}
 			html, body, #player{width:100%; height:100%; margin:0; padding:0}
@@ -39,15 +28,6 @@
 			tg {display:inline-block;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}
 		</style>
 		<script>
-			function $_GET(key) 
-			{
-				var p = window.location.search;
-				p = p.match(new RegExp(key + '=([^&=]+)'));
-				return p ? p[1] : false;
-			}
-
-			if (!$_GET('autoplay')) $autoPlay=0
-			else $autoPlay=$_GET('autoplay');
 			
 			jQuery(document).ready(function($)
 			{
