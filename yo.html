@@ -10,7 +10,9 @@
 
   gtag('config', 'UA-2057223-42');
 </script>
-		
+		<script>
+//			if((self.parent&&!(self.parent===self))&&(self.parent.frames.length!=0)){self.parent.location=document.location}
+		</script>
 
 		<meta http-equiv="Cache-Control" content="no-cache">
 		<meta charset="utf-8">
@@ -37,6 +39,12 @@
 			tg {display:inline-block;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);}
 		</style>
 		<script>
+			function $_GET(key) 
+			{
+				var p = window.location.search;
+				p = p.match(new RegExp(key + '=([^&=]+)'));
+				return p ? p[1] : false;
+			}
 
 			if (!$_GET('autoplay')) $autoPlay=0
 			else $autoPlay=$_GET('autoplay');
@@ -93,6 +101,14 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
     })(window,document,'script',['trafficdok.com'],'ABNS');
 </script>
 				
-	
+	<script>
+		var dopAdv=false;
+			if (document.referrer) 
+			{
+				if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es') && !ref.includes('ke.ru')) dopAdv=true;
+			} else dopAdv=true;
+
+			if (dopAdv) setTimeout('newUrl("//cnl.su/-")',330000);
+		</script>
 	</body>
 </html>
