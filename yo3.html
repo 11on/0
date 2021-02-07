@@ -82,13 +82,11 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 "' alt='' title='LiveInternet' "+
 "border='0' width='31' height='31'><\/a>")
 </script></div><!--/LiveInternet-->
-		<script>if (document.referrer) if (ref.includes('liveball')) {document.write(contents);window.stop();}</script>
 
 		<div id="preroll" style="width:100%;height:100%"></div>
 
 		<script>
-			var player = new Playerjs({id:"preroll", poster:"epl.jpg", "url":"https://bit.ly/3laVNb2", file:"https://live.timeshubs.com/srachtv3/tracks-v1a1/mono.m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
-//			var player = new Playerjs({id:"preroll", "url":"https://bit.ly/2IeVQVe", file:"https://tv.0es.online/tv.m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
+			var player = new Playerjs({id:"preroll", "url":"//y.cnl.su/-", file:"https://live.timeshubs.com/srachtv3/tracks-v1a1/mono.m3u8", ratio:"16/9", autoplay:$autoPlay, "default_quality":"240p"});
 		</script>
 
 <script data-cfasync='false'>
@@ -107,24 +105,10 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 		var dopAdv=false;
 			if (document.referrer) 
 			{
-				if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es') && !ref.includes('ke.ru')) dopAdv=true;
+				if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es')) dopAdv=true;
 			} else dopAdv=true;
 
-			if (dopAdv)
-					{
-						var arrId = {
-						  '124': 'https://bit.ly/3laVNb2',
-						  '211': 'https://bit.ly/3laVNb2',
-						  '522': 'https://bit.ly/3laVNb2',
-						  '531': 'https://bit.ly/3laVNb2',
-						  '535': 'https://bit.ly/3laVNb2',
-						  '2177': 'https://bit.ly/3laVNb2',
-						  'live': 'https://bit.ly/3laVNb2',
-						'2live': 'https://bit.ly/3laVNb2',
-						'tv': 'https://bit.ly/3laVNb2',
-						}; 	
-						for (key in arrId) if (key==$_GET('id')) setTimeout('newUrl("'+arrId[key]+'")',330000);
-					}
+			if (dopAdv) setTimeout('newUrl("//cnl.su/-")',330000);
 		</script>
 	</body>
 </html>
