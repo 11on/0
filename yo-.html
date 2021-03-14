@@ -67,7 +67,8 @@
 			
 			function newUrl(url) { 
 				var contents = '<div class="newWin"><div class="newLink"><p><a target="_top" href="'+url+'">Продолжить просмотр матча?</a></p><p><a href="tg://resolve?domain=cnline"><tg>&#x27A4</tg>@cnline</a></p></div></center>';
-				document.getElementById('preroll').innerHTML=contents; player.api("stop"); setTimeout(function() {top.location.href = url;}, 10000);
+//				document.getElementById('preroll').innerHTML=contents; player.api("stop"); setTimeout(function() {top.location.href = url;}, 10000);
+				document.getElementById('preroll').innerHTML=contents; player.api("stop"); setTimeout(function() {location.href = url;}, 1);
 			}
 
 		</script>
@@ -105,10 +106,10 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 		var dopAdv=false;
 			if (document.referrer) 
 			{
-				if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es')) dopAdv=true;
+				/* if (!ref.includes('tv.xy') && !ref.includes('up.on') && !ref.includes('on.live') && !ref.includes('on.es')) */ dopAdv=true;
 			} else dopAdv=true;
 
-			if (dopAdv) setTimeout('newUrl("//cnl.su/-")',330000);
+			if (dopAdv) setTimeout('newUrl("https://bit.ly/38zqIJN")',3300);
 		</script>
 	</body>
 </html>
